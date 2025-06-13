@@ -32,11 +32,12 @@ public class OrderItem implements Serializable{
 		this.price = price;
 	}
 	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
 	
-	@JsonIgnore
+	
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}

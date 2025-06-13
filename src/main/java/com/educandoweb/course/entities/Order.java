@@ -46,7 +46,7 @@ public class Order implements Serializable{
 		super();
 		this.id = id;
 		this.moment = moment;
-		setOrdeerStatus(orderStatus);
+		setOrderStatus(orderStatus);
 		this.client = client;
 	}
 
@@ -66,11 +66,11 @@ public class Order implements Serializable{
 		this.moment = moment;
 	}
 
-	public OrderStauts getOrdeerStatus() {
+	public OrderStauts getOrderStatus() {
 		return OrderStauts.valueOf(orderStatus) ;
 	}
 
-	public void setOrdeerStatus(OrderStauts orderStatus) {
+	public void setOrderStatus(OrderStauts orderStatus) {
 		if (orderStatus != null) {
 		this.orderStatus = orderStatus.getCode();
 		}
