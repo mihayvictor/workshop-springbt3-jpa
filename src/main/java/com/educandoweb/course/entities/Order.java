@@ -30,7 +30,6 @@ public class Order implements Serializable{
 	
 	private Instant moment;
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
