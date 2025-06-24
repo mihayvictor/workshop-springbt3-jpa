@@ -16,14 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.educandoweb.course.entities.User;
+import com.educandoweb.course.repositories.UserRepository;
 import com.educandoweb.course.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
 public class UserResource {
+
+    private final UserRepository userRepository;
 	
 	@Autowired
 	private UserService service;
+
+    UserResource(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 	
 	@GetMapping
 	public ResponseEntity<List<User>> findAll(){
